@@ -1,31 +1,25 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
+int main()
+{
+ int n;
+ cin>>n;
 
-int main() {
+ int org=n;
+ int rev=0;
+ while(n!=0)
+ {
+  int rem= n%10;
+  rev= rev*10+rem;
+  n/=10;
+ }
+ cout<<rev<<endl;
 
-    int t;
-    cin >> t;
+ if(rev==org)
+ cout<<"yes\n";
+ else
+  cout<<"No\n";
 
-    while(t--) 
-    {
-        int x, k;
-        cin >> x >> k;
+return 0;
 
-        if(x%k!=0)
-        {
-            cout<<1<<"\n";
-            cout<<x<<"\n";
-        }
-
-        else
-        {
-            cout<<2<<"\n";
-            cout<<1<<" "<<x-1<<"\n";
-
-        }
-
-        
-    }
-
-    return 0;
 }

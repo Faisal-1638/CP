@@ -2,25 +2,29 @@
 using namespace std;
 int main()
 {
-      int n;
-      cin>>n;
+     int N,M;
+     cin>>N>>M;
 
-      for(int i=0; i<n; i++)
-      {
-        for(int j=0; j<n; j++)
+     vector<int>A(N);
+
+        for(int i=0; i<N; i++)
         {
-          if(i==0||i==n-1||j==0||j==n-1)
-          cout<<"*";
-
-          else
-           cout<<" ";
+          cin>>A[i];
         }
-     
-        cout<<"\n";
-      }
- 
+         
+          int freq[N]={0};
 
-return 0;
+            for(int i=0; i<N; i++)
+            {
+              freq[A[i]]++;
+            }
+
+              for(int i=1; i<=M; i++)
+              {
+                cout<<freq[i]<<"\n";
+              }
+
+   return 0;
 
 }
 

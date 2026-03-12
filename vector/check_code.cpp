@@ -15,15 +15,16 @@ int main()
      }
      
        for(int i=0; i<S.size(); i++)
-       { 
-          if(S[A]=='-' && isdigit(S[i]))
+       {
+        if(i==A)
+          continue;
+    
+          if(!isdigit(S[i]))
           {
-           cout<<"YES\n";
+           cout<<"NO\n";
            return 0;
           }             
        }
 
-          cout<<"No\n";
-          return 0;
-
+       cout<<"YES\n";
 }

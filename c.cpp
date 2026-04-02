@@ -2,28 +2,26 @@
 using namespace std;
 int main()
 {
-    int A,B;
-    cin>>A>>B;
+   int t;
+   cin >> t;
 
-    string S;
-    cin>>S;
+   while(t--)
+   {
+    int n;
+    cin >> n;
 
-     if(S[A]!='-')
-     {
-      cout<<"No\n";
-      return 0;
-     }
-     
-       for(int i=0; i<S.size(); i++)
+    vector<int> v(n);
+
+       for(int i = 0; i < n; i++)
        { 
-          if(S[A]=='-' && isdigit(S[i]))
-          {
-           cout<<"YES\n";
-           return 0;
-          }             
+         cin >> v[i];
        }
 
-          cout<<"No\n";
-          return 0;
+        int mn = *min_element(v.begin(), v.end());
 
+        if(mn % 2 == 0)
+         cout<<"";
+   }
+
+         return 0;
 }

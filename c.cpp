@@ -1,27 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
-{
-   int t;
-   cin >> t;
 
-   while(t--)
-   {
-    int n;
-    cin >> n;
+int main() {
+    string s = "I love coding";
 
-    vector<int> v(n);
+    int j = 0;
 
-       for(int i = 0; i < n; i++)
-       { 
-         cin >> v[i];
-       }
+    for (int i = 0; i < s.size(); i++) {
 
-        int mn = *min_element(v.begin(), v.end());
+        if (s[i] != ' ') {
+            s[j] = s[i];
+            j++;
+        }
+    }
 
-        if(mn % 2 == 0)
-         cout<<"";
-   }
+    s.resize(j);
 
-         return 0;
+    cout << s;
+
+    return 0;
 }

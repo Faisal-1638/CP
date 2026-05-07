@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,s2;
+    cin>>s1>>s2;
+
+    string newnum="";
+
+    for(int i=0; i<s1.size();i++)
+    {
+        if(s1[i]!=s2[i])
+          newnum+='1';
+        else
+          newnum+='0';
+    }
+
+    cout<<newnum;
+
+
+return 0;
+
+
+}

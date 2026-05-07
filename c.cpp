@@ -3,20 +3,27 @@ using namespace std;
 
 int main() 
 {
-    string s;
-    getline(cin,s);
+    int t;
+    cin >> t;
 
-    set<int> st;
-    
-    for(int c : s)
+    while(t--)
     {
-        if(c >= 'a' && c <= 'z')
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for(int i = 0; i < n; i++)
         {
-            st.insert(c);
+            cin >> v[i];
         }
+
+        int opr = 0;
+        for(int i = 0; i < n -1; i++)
+        {
+             if ((v[i] % 2) == (v[i + 1] % 2))
+             opr++;
+        }
+
+        cout << opr <<"\n";
     }
-
-    cout << st.size() << "\n";
-
     return 0;
 }

@@ -8,22 +8,24 @@ int main()
 
     while(t--)
     {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-        for(int i = 0; i < n; i++)
+      
+     int n;
+     cin >> n;
+      
+        int cnt = 0;
+        for(int i = 1; i <= 9; i++)
         {
-            cin >> v[i];
+          long long x = i;
+          while( x <= n)
+          {
+            cnt++;
+            x *= 10;
+          } 
         }
 
-        int opr = 0;
-        for(int i = 0; i < n -1; i++)
-        {
-             if ((v[i] % 2) == (v[i + 1] % 2))
-             opr++;
-        }
+        cout << cnt << "\n";
+      }             
 
-        cout << opr <<"\n";
-    }
-    return 0;
+return 0;
+
 }

@@ -3,29 +3,24 @@ using namespace std;
 
 int main() 
 {
-    int t;
-    cin >> t;
+    char ch = 'A';
 
-    while(t--)
-    {
-      
-     int n;
-     cin >> n;
-      
-        int cnt = 0;
-        for(int i = 1; i <= 9; i++)
-        {
-          long long x = i;
-          while( x <= n)
-          {
-            cnt++;
-            x *= 10;
-          } 
-        }
+    cout << (int)ch;
 
-        cout << cnt << "\n";
-      }             
+    cout << char(97);
 
+//Convert lowercase → uppercase
+    char ch = 'b';
+
+    ch = ch - 32;
+
+    cout << ch;
+    
+//Convert uppercase → lowercase
+    char ch = 'D';
+    ch = ch + 32;
+
+    cout << ch;
 return 0;
 
 }

@@ -3,48 +3,39 @@ using namespace std;
 
 int main() 
 {
-    int t;
-    cin >> t;
+    int n;
+    cin >> n;
 
-    while(t--)
+    vector<int> v(n);
+    for(int i = 0; i < n; i++) 
+       cin >> v[i];
+
+    int m;
+    cin >> m;
+    
+    while(m--)
     {
-        int n;
-        cin >> n;
-       
-        string s;
-        cin >> s;
+        int x,y;
+        cin >> x >> y;
 
-        int left = 0;
-        int right = 0;
-        bool pass = false;
-        for(int i = 0; i < n; i++)
-        {
-          if(s[i] == 'R')
-            left++;
-            else if(s[i] == 'L')
-             left--;
-             
-             else if(s[i] == 'U')
-              right++;
+        x--;
 
-              else 
-               right--;
+            if( x > 0)
+            {
+                v[x - 1] +=  (y - 1);
+            }
 
-               if(left == 1 && right == 1)
-               {
-                pass = true;
-                break;
-               }
-        }
+            if(x < n - 1)
+            {
+                v[x + 1] += (v[x] - y);
+            }
 
-        if(pass)
-         cout << "YES\n";
+            v[x] = 0;
+     }
 
-         else 
-          cout << "NO\n";
-         
-        
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << v[i] << endl;
     }
-
-    return 0;
 }

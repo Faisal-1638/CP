@@ -20,7 +20,8 @@ int main()
 
             for(int i = 1; i <= M; i++)
             {
-              cout << freq[i] << "\n";
+              if(freq[i] > 0)
+               cout << freq[i] << "\n";
             }
 
             return 0;

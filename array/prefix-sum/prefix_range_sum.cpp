@@ -38,18 +38,38 @@ int main() {
     return 0;
 }
 /*
-vector<long long> pre(n + 1, 0);
+1 based index
 
-for(int i = 1; i <= n; i++) {
-    cin >> a;
-    pre[i] = pre[i - 1] + a;
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n, q;
+    cin >> n >> q;
+
+    vector<long long> a(n + 1);
+    vector<long long> pref(n + 1, 0);
+
+    // Input array (1-based)
+    for(int i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+        pref[i] = pref[i - 1] + a[i];
+    }
+
+    while(q--)
+    {
+        int l, r;
+        cin >> l >> r;
+
+        long long rangeSum = pref[r] - pref[l - 1];
+
+        cout << rangeSum << '\n';
+    }
+
+    return 0;
 }
 
-while(q--) {
-    int l, r;
-    cin >> l >> r;
-
-    cout << pre[r] - pre[l - 1] << '\n';
-}
 */
 

@@ -24,8 +24,10 @@ int main()
         }
         else
         {
-            if(turn) sereja += v[r];
-            else dima += v[r];
+            if(turn) 
+            sereja += v[r];
+            else 
+            dima += v[r];
             r--;
         }
 

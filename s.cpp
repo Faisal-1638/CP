@@ -1,32 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
 
-int main() 
+int main()
 {
-    
-    ll n,q;
-    cin >> n >> q;
+    int t;
+    cin >> t;
 
-    vector<ll> x(n + 1), pre(n + 1, 0);
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        vector<int>v(n);
+        for(int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
 
-    for(ll i = 1; i <= n; i++)
-      cin >> x[i];
+        int cnt0 = 0, cnt1 = 0;
+        for(int i = 0; i < n; i++)
+        {
+           
+            if(v[0] == 0)
+             cnt0++;
+            else 
+                cnt1++;
+        }
 
-      for(ll i = 1; i <= n; i++)
-      {
-        pre[i] = x[i] + pre[i - 1];
-      }
-    
-      while(q--)
-      {
-        ll a,b;
-        cin >> a >> b;
+        if(cnt0 < cnt1)
+         cout << "Bessie" << "\n";
 
-          cout << pre[b] - pre[a - 1] << "\n";
+         else if(cnt0 == cnt1)
+          cout << "Bessie" << "\n";
 
-      }
-
+          else 
+           cout << "Elsie" << "\n";
+     
+        
+    }
 
     return 0;
 }

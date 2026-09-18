@@ -1,38 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #define ll long long
+
 int main()
 {
-    ll n, k;
-    cin >> n >> k;
+    int t;
+    cin >> t;
 
-    vector<ll> h(n);
-
-    for(int i = 0; i < n; i++)
+    while(t--)
     {
-        cin >> h[i];
+
+       long long x,y,k;
+       cin >> x >> y >> k;
+
+       long long diff = y - x;
+       long long work = 0, divisor = 0;
+
+       int mn = min(diff, k);
+       for(int i = 0; i < mn; i++)
+       {
+            work += y % x;
+            x++;
+            y++;
+            divisor++;
+       }
+
+       cout << work + diff * (k - divisor) << "\n";
+       
+
     }
 
-    int mn = INT_MAX;
-    int idx = 0;
-    
-     for(int i = 0; i <= n - k; i++)
-     {
-        int sm = INT_MAX;
-         for(int j = i; j < i + k; j++)
-         {
-            sm += h[j];
-         }
-
-         if(sm < mn)
-            {
-                mn = sm;
-                idx = i;
-            }
-
-     }
-
-     cout << idx + 1;
-    
-    
+    return 0;
 }

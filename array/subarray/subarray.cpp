@@ -1,3 +1,4 @@
+//it prints whole subarray
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,8 +8,7 @@ int main() {
     int n = v.size();
 
     for(int i = 0; i < n; i++) {
-        for(int j = i; j < n; j++) {
-            
+        for(int j = i; j < n; j++) {           
             // subarray from i to j
             for(int k = i; k <= j; k++) {
                 cout << v[k] << " ";

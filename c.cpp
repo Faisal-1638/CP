@@ -5,31 +5,36 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
+   ll n;
+   cin >> n;
 
-    while(t--)
+   vector<ll> v(n);
+
+   for(int i = 0; i < n; i++)
+   {
+      cin >> v[i];
+   }
+
+ 
+   int mn = INT_MAX, mx = INT_MIN;
+   for(int i = 0; i < n; i++)
+   {
+      if(v[i] < mn)
+       mn = v[i];
+
+       if(v[i] > mx)
+        mx = v[i];
+   }
+
+    ll cnt = 0;
+    for(int i = 0; i < n; i++)
     {
-
-       long long x,y,k;
-       cin >> x >> y >> k;
-
-       long long diff = y - x;
-       long long work = 0, divisor = 0;
-
-       int mn = min(diff, k);
-       for(int i = 0; i < mn; i++)
-       {
-            work += y % x;
-            x++;
-            y++;
-            divisor++;
-       }
-
-       cout << work + diff * (k - divisor) << "\n";
-       
-
+         if(v[i] > mn && v[i] < mx)
+            cnt++;
     }
 
-    return 0;
+
+    cout << cnt << "\n";
+    
+       return 0;
 }

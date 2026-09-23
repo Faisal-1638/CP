@@ -1,5 +1,4 @@
-//Naive (Brute Force) approach using nested loops.
-//[Naive Approach] Fixed-Size Window Brute Force - 
+//Naive (Brute Force) approach using nested loops. 
 //O(n × k) time and O(1) space
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,9 +41,7 @@ int main()
 
 
 /*
-[Better Approach - 1] Using Prefix Sum - O(n) Time and O(n) Space
 //[Better Approach - 1] Using Prefix Sum - O(n) Time and O(n) Space
-
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
